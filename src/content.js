@@ -112,7 +112,7 @@ function createFloatingButton() {
 					".Am.aiL.aO9.Al.editable.LW-avf.tS-tW",
 				);
 				if (editableElement) {
-					editableElement.innerHTML = reply.split('\n').join('<br>'); // Inject the generated response
+					editableElement.innerHTML = reply.split("\n").join("<br>"); // Inject the generated response
 				}
 				button.style.backgroundColor = "#34A853";
 				button.innerHTML = "✓ Generated";
@@ -134,12 +134,6 @@ function createFloatingButton() {
 	return button;
 }
 
-setTimeout(() => {
-	const replyButton = document.querySelector("span[id=':3a']");
-	replyButton.addEventListener("click", () => {
-		checkAndAddButton();
-	});
-}, 4000);
 
 function checkAndAddButton() {
 	setTimeout(() => {
@@ -153,7 +147,7 @@ function checkAndAddButton() {
 			button.id = "ai-mailer-button";
 			targetTd.appendChild(button);
 		}
-	}, 1000);
+	}, 500);
 }
 
 // Monitor URL changes
@@ -162,7 +156,12 @@ new MutationObserver(() => {
 	const url = location.href;
 	if (url !== lastUrl) {
 		lastUrl = url;
-		// checkAndAddButton();
+		setTimeout(() => {
+			const replyButton = document.querySelector("span.ams.bkH");
+			replyButton.addEventListener("click", () => {
+				checkAndAddButton();
+			});
+		}, 1000);
 	}
 }).observe(document, { subtree: true, childList: true });
 
