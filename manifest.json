@@ -1,0 +1,17 @@
+{
+	"manifest_version": 3,
+	"name": "AI Mailer",
+	"version": "1.0",
+	"description": "Generate email replies using Ollama",
+	"permissions": ["activeTab", "tabs", "scripting"],
+	"host_permissions": ["http://localhost/*", "http://127.0.0.1/*"],
+	"background": {
+		"service_worker": "background.js"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://mail.google.com/*"],
+			"js": ["./src/content.js"]
+		}
+	]
+}
