@@ -55,7 +55,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 					{
 						role: "system",
 						content:
-							"You are a professional email assistant. Generate concise, clear, and appropriate email replies.",
+							"You are an email assistant. Provide only the email reply text without any explanations, prefixes, or additional formatting. Your response should be ready to copy and paste as an email reply.",
 					},
 					{
 						role: "user",
