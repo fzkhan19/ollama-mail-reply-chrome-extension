@@ -134,7 +134,6 @@ function createFloatingButton() {
 	return button;
 }
 
-
 function checkAndAddButton() {
 	setTimeout(() => {
 		const existingButton = document.getElementById("ai-mailer-button");
@@ -152,18 +151,31 @@ function checkAndAddButton() {
 
 // Monitor URL changes
 let lastUrl = location.href;
+const initReplyButtonListener = () => {
+	const replyButton = document.querySelector("span.ams.bkH");
+	if (replyButton) {
+		replyButton.addEventListener("click", () => {
+			checkAndAddButton();
+		});
+	}
+};
+
+initReplyButtonListener(); // Run on page reloads
+
 new MutationObserver(() => {
 	const url = location.href;
 	if (url !== lastUrl) {
 		lastUrl = url;
-		setTimeout(() => {
-			const replyButton = document.querySelector("span.ams.bkH");
-			replyButton.addEventListener("click", () => {
-				checkAndAddButton();
-			});
-		}, 1000);
+		setTimeout(initReplyButtonListener, 1000);
 	}
 }).observe(document, { subtree: true, childList: true });
 
-// Initial check
-// checkAndAddButton();
+let replyButton;
+setInterval(() => {
+	replyButton = document.querySelector("span.ams.bkH");
+	if (replyButton) {
+		replyButton.addEventListener("click", () => {
+			checkAndAddButton();
+		});
+	}
+}, 700);
