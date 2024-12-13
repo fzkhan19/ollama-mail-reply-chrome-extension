@@ -112,7 +112,7 @@ function createFloatingButton() {
 					".Am.aiL.aO9.Al.editable.LW-avf.tS-tW",
 				);
 				if (editableElement) {
-					editableElement.innerHTML = reply; // Inject the generated response
+					editableElement.innerHTML = reply.split('\n').join('<br>'); // Inject the generated response
 				}
 				button.style.backgroundColor = "#34A853";
 				button.innerHTML = "✓ Generated";

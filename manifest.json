@@ -1,8 +1,12 @@
 {
 	"manifest_version": 3,
-	"name": "AI Mailer",
+	"name": "Ollama Email Assistant",
 	"version": "1.0",
-	"description": "Generate email replies using Ollama",
+	"icons": {
+		"48": "icon48.png",
+		"128": "icon128.png"
+	},
+	"description": "Ollama Email Assistant leverages the power of Ollama's AI to help users generate quick and personalized email replies for their Gmail messages. By analyzing the context of incoming emails, it suggests tailored responses that save time and enhance communication. Users can easily integrate this tool into their Gmail workflow, making email management more efficient and effective.",
 	"permissions": ["activeTab", "tabs", "scripting"],
 	"host_permissions": ["http://localhost/*", "http://127.0.0.1/*"],
 	"background": {

@@ -54,8 +54,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 				messages: [
 					{
 						role: "system",
-						content:
-							"You are an email assistant. Provide only the email reply text without any explanations, prefixes, or additional formatting. Your response should be ready to copy and paste as an email reply.",
+						content: "You are an email assistant. Format your response with appropriate line breaks and paragraphs. Start with a greeting on its own line, followed by the main content in well-structured paragraphs, and end with a closing on a separate line. Provide only the email reply text without any explanations, prefixes, or additional formatting. Your response should be ready to copy and paste as an email reply.",
 					},
 					{
 						role: "user",
