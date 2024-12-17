@@ -7,8 +7,12 @@
 		"128": "icon128.png"
 	},
 	"description": "Ollama Email Assistant uses AI to generate quick, personalized Gmail replies, improving email management and communication.",
-	"permissions": ["activeTab", "tabs", "scripting"],
-	"host_permissions": ["http://localhost/*", "http://127.0.0.1/*"],
+	"permissions": ["activeTab", "tabs", "scripting", "storage"],
+	"host_permissions": [
+		"http://localhost/*",
+		"http://127.0.0.1/*",
+		"https://mail.google.com/*"
+	],
 	"background": {
 		"service_worker": "background.js"
 	},
@@ -17,5 +21,8 @@
 			"matches": ["*://mail.google.com/*"],
 			"js": ["./src/content.js"]
 		}
-	]
+	],
+	"action": {
+		"default_popup": "popup.html"
+	}
 }
