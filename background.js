@@ -158,7 +158,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 								{
 									parts: [
 										{
-											text: `Generate a direct email reply. Focus only on the response content, without any subject line or formatting. Here's the email to respond to:\n${request.emailContent}`,
+											text: `Please provide a professional and detailed email reply, focusing solely on the response content without a subject line. Include "regards." Here is the email to respond to:\n${request.emailContent}`,
 										},
 									],
 								},
